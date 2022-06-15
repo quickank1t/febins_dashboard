@@ -8,18 +8,10 @@ const app = express();
 const port = 3000
 var params = {
     connectionString: "Server=YourServer;Database=YourDB;Integrated Security=True",
-    source: "SELECT TOP 20 * FROM SampleData"
+    source: "SELECT TOP 20 * FROM _bvStockAndWhseItems"
   };
 var getData = edge.func( 'sql', params);
-
-
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "yourusername",
-    password: "yourpassword",
-    database: "mydb"
-  });
-  
+ 
 app.get('/', (req, res) => {
     res.send('Hello World!')
   })
